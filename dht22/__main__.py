@@ -39,7 +39,7 @@ def main():
 
         # Note that sometimes you won't get a reading and the results will be null
         # (because Linux can't guarantee the timing of calls to read the sensor).
-        if humidity is not None and temperature is not None:
+        if humidity is not None and temperature is not None and humidity < 100:
             print('Temp: {0:0.1f}  Humidity: {1:0.1f}%'.format(temperature, humidity))
 
             measurements = influx.measurements_for_reading(temperature, humidity)
